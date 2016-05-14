@@ -85,4 +85,33 @@ public class BinarySearchTree{
 			addToLeft(element, temp.left);
 		}
 	}
+	
+	//print the binary search tree answer
+	public void printAnswer(){
+		//print the left of the root number
+		if(root.left != null){
+			changeRoot(root.left);
+		}
+		//print the root number
+		System.out.print(root.element + "  ");
+		//print the right of the root number
+		if(root.right != null){
+			changeRoot(root.right);
+		}
+		
+	}
+	
+	//print the stream under the root number
+	public void changeRoot(BinaryNode change){
+		//print the left of the stream number
+		if(change.left != null){
+			changeRoot(change.left);
+		}
+		//print the stream number
+		System.out.print(change.element + "  ");
+		//print the right of the stream number
+		if(change.right != null){
+			changeRoot(change.right);
+		}
+	}
 }
