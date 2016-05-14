@@ -21,5 +21,12 @@ public class TestBinarySearchTree{
 		System.out.println("");
 		System.out.println("");
 		
+		//create a variable binary to call BinarySearchTree class
+		BinarySearchTree binary = new BinarySearchTree(number);
+		
+		//print the answer of the binary search tree
+		System.out.println("After binary search tree : ");
+		binary.printAnswer();
+		
 	}
 }
