@@ -34,4 +34,55 @@ public class BinarySearchTree{
 		}
 	}
 	
+	//this method is add the number in the binary search tree
+	public void addNum(int element){
+		//get the first number
+		if(size == 0){
+			root = new BinaryNode(element);
+			size++;
+		}
+		else {
+			//determine the right and left node
+			if(element >= (int)root.element){
+				addToRight(element, root);
+			}
+			else if(element < (int)root.element){
+				addToLeft(element, root);
+			}
+		}
+	}
+	
+	//this method is add the number to the right node
+	public void addToRight(int element, BinaryNode temp){
+		//if the right node of the number is null then let the new number to the right node
+		if(temp.right == null){
+			temp.right = new BinaryNode(element);
+			size++;
+		}
+		//if the new number is bigger or equal then the root number, call the add right node method
+		else if((int)(temp.right).element <= element){
+			addToRight(element, temp.right);
+		}
+		//if the new number is smaller then the root number, call the add left node method
+		else if((int)(temp.right).element > element){
+			addToLeft(element, temp.right);
+		}
+	}
+	
+	//this method is add the number to the left node
+	public void addToLeft(int element, BinaryNode temp){
+		//if the left node of the number is null then let the new number to the left node
+		if(temp.left == null){
+			temp.left = new BinaryNode(element);
+			size++;
+		}
+		//if the new number is bigger or equal then the root number, call the add right node method
+		else if((int)(temp.left).element <= element){
+			addToRight(element, temp.left);
+		}
+		//if the new number is smaller then the root number, call the add left node method
+		else if((int)(temp.left).element > element){
+			addToLeft(element, temp.left);
+		}
+	}
 }
